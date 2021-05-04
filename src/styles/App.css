@@ -1,10 +1,35 @@
 .App {
   text-align: center;
+  font-size: 13px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.div-menu {
+  display: block;
+  margin: 80px 0 80px 0;
+
+}
+
+@media (max-width: 200px) {
+}
+
+hr{
+  margin-bottom: 20px;
+  display: flow-root;
+  flex-wrap: wrap;
+}
+
+td{
+  padding: 5px;
+}
+
+.inputModal {
+  width: 200px;
+  height: 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
