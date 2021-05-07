@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export function getFlights () {
     return (dispatch) => {
-        axios.get('https://react.galateastudio.nl/loading/flights1')
+        axios.get('https://react.galateastudio.nl/loading/flights_2')
             .then(res => {
-                let data=res.data
+                let data=[...res.data]
                 dispatch({
                     type: 'GET_INFO',
                     payload: data,
@@ -20,7 +20,7 @@ export function getPlaces(){
     return (dispatch)=> {
         axios.get('https://react.galateastudio.nl/loading/cities')
             .then(res=>{
-                let data=[...res.data]
+                let data=res.data
                 dispatch({
                     type: "GET_PLACES",
                     payload: data,
@@ -47,7 +47,7 @@ export function getAirlines(){
 export function searchFlights(payload){
     console.log(payload)
     return dispatch=> {
-        axios.get('https://react.galateastudio.nl/loading/flights1')
+        axios.get('https://react.galateastudio.nl/loading/flights_2')
             .then(res => {
                 let data=[...res.data]
                 for (let i=0; i<data.length; i++) {
@@ -80,11 +80,19 @@ export function searchFlights(payload){
 
 export function clientsChoice(payload){
     return dispatch=>{
+                    dispatch({
+                        type: 'CHOICE',
+                        payload: payload,
+                    })
+            }
+
+}
+
+export function deleteChoice(payload){
+    return dispatch=>{
         dispatch({
-            type: 'CHOICE',
-            payload: payload
+            type: 'DELETE-CHOICE',
+            payload: payload,
         })
-
     }
-
 }

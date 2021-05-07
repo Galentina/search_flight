@@ -8,10 +8,12 @@ import Paginate from "../context/Paginate";
 import ModalSelect from '../context/ModalSelect';
 import ModalFlights from "./ModalFlights";
 import ClientInfoButton from "./ClientInfoButton";
+import FlightInfo from "./FlightInfo";
+import '../../../styles/App.css';
 
 
 function FlightsPage(props) {
-    const {comp, flights} = props;
+    const {comp, flights, choices} = props;
 
     let title;
     comp.map(el => el.path === "/info" ? title = el.head : el)
@@ -39,13 +41,12 @@ function FlightsPage(props) {
 
 
     return (
-        <div className='mt-10 mb-3' >
-            <div style={{width: "80%", margin: "auto"}}>
-                <hr/>
-                <div className='float-left'>
+        <div className='mt-10 mb-3 d-flex pl-5' >
+            <div className='div-table'>
+                <div className='l-title'>
                     <MainHeader title={title}/>
                 </div>
-                <div className="float-right " style={{margin: "10px 0 30px 0"}}><br/>
+                <div className="float-right " style={{margin: "40px 0 30px 0"}}><br/>
                     <button className="btn btn-outline-success " type="search" onClick={() => update()}>All items
                     </button>
                     &nbsp;&nbsp;
@@ -76,19 +77,20 @@ function FlightsPage(props) {
                  </tbody>
             </table>
             <Paginate itemsPerPage={flightsPerPage} totalItems={flights.length} pageCounter={pageCounter}/>
-            </div>
-
-
-
+            </div >
+        <div className='div-small-table'>
+            <FlightInfo/>
+        </div>
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    flights: state.dataFlights,
+    flights: state.allFlights,
     places: state.places,
     lines: state.lines,
     comp: state.comp,
+    choices: state.choices,
 })
 const mapDispatchToProps = (dispatch) => ({
     getFlightsList: () => dispatch(getFlights()),

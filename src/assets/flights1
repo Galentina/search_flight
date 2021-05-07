@@ -128,5 +128,5 @@
     {"id": 127, "data": "2021-06-15", "time": "07:20", "name": "KLM", "direct": "Madrid", "num":127},
     {"id": 128, "data": "2021-06-15", "time": "18:20", "name": "KLM", "direct": "Berlin", "num":128},
     {"id": 129, "data": "2021-06-16", "time": "08:10", "name": "Ryanair", "direct": "Milan", "num":129},
-    {"id": 130, "data": "2021-06-16", "time": "15:45", "name": "Aeroflot", "direct": "Moscow", "num":130}
+    {"id": 130, "data": "2021-06-16", "time": "15:45", "name": "Aeroflot", "direct": "Moscow", "num":130},
 ]

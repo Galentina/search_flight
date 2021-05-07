@@ -3,11 +3,12 @@ import '../../../styles/App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import {getAirlines, getFlights, getPlaces, searchFlights} from "../../../redux/actions";
 import {connect} from "react-redux";
+import Stuard from '../../../assets/stuard.svg'
 
 
 function ModalFlights(props) {
 
-    const {places, lines} = props;
+    const {places, lines, flights} = props;
     const useAirlines = ['--', ...lines];
     const useCities = ['--', ...places];
 
@@ -74,14 +75,21 @@ function ModalFlights(props) {
             <button className="btn btn-primary mt-4 mb-3" onClick={()=>props.getFlightsList()}>Choose from all flights</button>
             <button className="btn btn-primary ml-sm-2 mt-4 mb-3" onClick={()=>updateFlights(newData, newTime, newName, newDirection)}>Search</button>{' '}
             </div>
-
+            <div style={{display: "flex", marginTop: '100px'}}>
+                <img src={Stuard} alt='Welcome' tytle='Welcome' style={{width: "250px"}}/>
+                <h1 style={{textAlign: "center", marginTop:"50px"}}>{flights.length} <br/>flights found</h1>
+            </div>
+<div>
+    <p className="client"><span className='select'>You can organise your page with all flights which you have chosen.</span> <br/>If you would like to choose a flight, just click on the button,
+       which is in the last column of the flight chosen by you, and this flight will appear in the your own list of flight.</p>
+        </div>
         </div>
     )
 
 }
 
 const mapStateToProps = (state) => ({
-    flights: state.flights,
+    flights: state.allFlights,
     places: state.places,
     lines: state.lines,
 });

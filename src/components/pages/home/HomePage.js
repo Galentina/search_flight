@@ -20,6 +20,9 @@ function HomePage (props) {
             <div style={{marginTop: "30px"}}>
             <img src={Logo} alt='Logo' tytle='Airlines' style={{width: "50%", marginTop: '30px'}}/>
             </div>
+            <div className='mt-5'>
+                <h3>Create from the list of all flights <br/>your own list of flights</h3>
+            </div>
         </div>
 
     )

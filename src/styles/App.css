@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
+  color: #282c34;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div{
+  color: #282c34;
 }
 
 .div-menu {
@@ -13,8 +13,36 @@
   margin: 80px 0 80px 0;
 
 }
+.div-small-table {
+  width: 20%;
+  margin: 50px 50px;
+}
+.div-table {
+  width: 80%;
+  margin: auto;
+}
 
+.l-title{
+  float: left;
+  margin: 20px 0 30px 0;
+}
+.page{
+  background-color: #fdf9d4;
+  margin: 50px auto;
+  padding: 10px;
+
+  box-shadow: 3px 3px 3px -3px #797979;
+}
 @media (max-width: 200px) {
+}
+
+.client {
+  font-size: 18px;
+  color: #282c34;
+}
+
+.client .select{
+  font-weight: bold;
 }
 
 hr{

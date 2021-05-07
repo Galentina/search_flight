@@ -17,7 +17,7 @@ function ModalSelect(props){
     return (
         <>
             <Drawer
-                width="35%"
+                width="55%"
                 placement="right"
                 mask={false}
                 onClose={onClose}
